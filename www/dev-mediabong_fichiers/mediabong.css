@@ -7728,8 +7728,52 @@ h1 a.sample-section {
   border-top-color: #70c6b4 !important;
 }
 /*ATECNA*/
+.ph-chosen-border,
+.ph-chosen-box-style,
+.chosen-container .chosen-drop,
+.chosen-container-single .chosen-search input[type="text"],
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices {
+  border: 2px solid #c2c2c2;
+  border-radius: 6px;
+}
+.ph-chosen-box-style,
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices {
+  height: 50px;
+  line-height: 50px;
+  box-shadow: none;
+  background: transparent;
+}
+.chosen-select,
+.chosen-select-search {
+  width: 340px;
+}
 .chosen-container {
   font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #a3a3a3;
+}
+.chosen-container .chosen-drop {
+  margin-top: 1px;
+}
+.chosen-container .chosen-results {
+  padding: 0;
+  margin: 0;
+}
+.chosen-container .chosen-results li {
+  line-height: 56px;
+  color: #9c9c9c;
+}
+.chosen-container .chosen-results li.highlighted {
+  background: #ffa600;
+  color: #fff;
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+  box-shadow: none;
+  background: transparent;
 }
 /*
  * This combined file was created by the DataTables downloader builder:
