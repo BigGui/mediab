@@ -1,0 +1,685 @@
+<style type="text/css">
+#mb_error { background: #ddd; font-size: 1em; font-family:sans-serif; text-align: left; color: #111; }
+#mb_error h1,
+#mb_error h2 { margin: 0; padding: 1em; font-size: 1em; font-weight: normal; background: #911; color: #fff; }
+	#mb_error h1 a,
+	#mb_error h2 a { color: #fff; }
+#mb_error h2 { background: #222; }
+#mb_error h3 { margin: 0; padding: 0.4em 0 0; font-size: 1em; font-weight: normal; }
+#mb_error p { margin: 0; padding: 0.2em 0; }
+#mb_error a { color: #1b323b; }
+#mb_error pre { overflow: auto; white-space: pre-wrap; }
+#mb_error table { width: 100%; display: block; margin: 0 0 0.4em; padding: 0; border-collapse: collapse; background: #fff; }
+	#mb_error table td { border: solid 1px #ddd; text-align: left; vertical-align: top; padding: 0.4em; }
+#mb_error div.content { padding: 0.4em 1em 1em; overflow: hidden; }
+#mb_error pre.source { margin: 0 0 1em; padding: 0.4em; background: #fff; border: dotted 1px #b7c680; line-height: 1.2em; }
+	#mb_error pre.source span.line { display: block; }
+	#mb_error pre.source span.highlight { background: #f0eb96; }
+		#mb_error pre.source span.line span.number { color: #666; }
+#mb_error ol.trace { display: block; margin: 0 0 0 2em; padding: 0; list-style: decimal; }
+	#mb_error ol.trace li { margin: 0; padding: 0; }
+.js .collapsed { display: none; }
+</style>
+<script type="text/javascript">
+document.documentElement.className = document.documentElement.className + ' js';
+function koggle(elem)
+{
+	elem = document.getElementById(elem);
+
+	if (elem.style && elem.style['display'])
+		// Only works with the "style" attr
+		var disp = elem.style['display'];
+	else if (elem.currentStyle)
+		// For MSIE, naturally
+		var disp = elem.currentStyle['display'];
+	else if (window.getComputedStyle)
+		// For most other browsers
+		var disp = document.defaultView.getComputedStyle(elem, null).getPropertyValue('display');
+
+	// Toggle the state of the "display" style
+	elem.style.display = disp == 'block' ? 'none' : 'block';
+	return false;
+}
+</script>
+<div id="mb_error">
+	<h1><span class="type">MB_HTTP_Exception [ 404 ]:</span> <span class="message">The requested URL /theme/admin/images/lang_flag/compng was not found on this server. (view &quot;images&quot; missing in class &quot;Controller_Default_Index&quot;)</span></h1>
+	<div id="error576aaa21bc19e" class="content">
+		<p><span class="file">DOCROOT/library/MVC/MVCClass.php [ 295 ]</span></p>
+		<pre class="source"><code><span class="line"><span class="number">290</span> 				$uri = Request::detect_uri();
+</span><span class="line"><span class="number">291</span> 				throw HTTP_Exception::factory(404, 'The requested URL :uri was not found on this server. (view ":view" missing in class ":controller")', 
+</span><span class="line"><span class="number">292</span> 					array(
+</span><span class="line"><span class="number">293</span> 						':uri' =&gt; $uri,
+</span><span class="line"><span class="number">294</span> 						':view' =&gt; $this-&gt;view, ':controller' =&gt; $this-&gt;name_controller)
+</span><span class="line highlight"><span class="number">295</span> 					);
+</span><span class="line"><span class="number">296</span> 			}
+</span><span class="line"><span class="number">297</span> 			if (isset($benchmark))
+</span><span class="line"><span class="number">298</span> 				Profiler::stop($benchmark);
+</span><span class="line"><span class="number">299</span> 		}
+</span><span class="line"><span class="number">300</span> 
+</span></code></pre>		<ol class="trace">
+					<li>
+				<p>
+					<span class="file">
+													<a href="#error576aaa21bc19esource0" onclick="return koggle('error576aaa21bc19esource0')">DOCROOT/index.php [ 36 ]</a>
+											</span>
+					&raquo;
+					MVC->execute()
+				</p>
+													<pre id="error576aaa21bc19esource0" class="source collapsed"><code><pre class="source"><code><span class="line"><span class="number">31</span> try
+</span><span class="line"><span class="number">32</span> {
+</span><span class="line"><span class="number">33</span> 	//Db::getInstance()-&gt;connect();
+</span><span class="line"><span class="number">34</span> 	// note : the "authorized_controller" is now useless :)
+</span><span class="line"><span class="number">35</span> 	$instance = MVC::getInstance();
+</span><span class="line highlight"><span class="number">36</span> 	$instance-&gt;execute();
+</span><span class="line"><span class="number">37</span> 	$instance-&gt;view();
+</span><span class="line"><span class="number">38</span> }
+</span><span class="line"><span class="number">39</span> catch(MB_Exception $e)
+</span><span class="line"><span class="number">40</span> {
+</span><span class="line"><span class="number">41</span> 	MB_Exception::_handler($e);
+</span></code></pre></code></pre>
+							</li>
+							</ol>
+	</div>
+	<h2><a href="#error576aaa21bc19eenvironment" onclick="return koggle('error576aaa21bc19eenvironment')">Environment</a></h2>
+	<div id="error576aaa21bc19eenvironment" class="content collapsed">
+				<h3><a href="#error576aaa21bc19eenvironment_included" onclick="return koggle('error576aaa21bc19eenvironment_included')">Included files</a> (68)</h3>
+		<div id="error576aaa21bc19eenvironment_included" class="collapsed">
+			<table cellspacing="0">
+								<tr>
+					<td><code>DOCROOT/index.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/bootstrap.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/defines.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/config.custom.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/library/MVC/MVCClass.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/library/Theme/Theme.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/library/functions/util.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/library/functions/date.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/base.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/permissions.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/phpmailer/init.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/phpmailer/vendor/PHPMailerAutoload.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/youtube/init.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/youtube/vendors/src/Google/autoload.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/dailymotion/init.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/dailymotion/vendors/Dailymotion.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/init.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/algoliasearch.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/src/AlgoliaSearch/Version.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/src/AlgoliaSearch/AlgoliaException.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/src/AlgoliaSearch/ClientContext.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/src/AlgoliaSearch/Client.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/algolia/vendor/src/AlgoliaSearch/Index.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/less/init.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/modules/less/vendor/less.php/lib/Less/Autoloader.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/debug/debug.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/debug/firephp-core/lib/FirePHPCore/fb.php</code></td>
+				</tr>
+								<tr>
+					<td><code>/var/www/mediabong.com/www/debug/firephp-core/lib/FirePHPCore/FirePHP.class.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/Exception.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config/File.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config/File/Reader.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config/Reader.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config/Source.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Arr.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/config.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/develop/config.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Config/Group.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/Controller/Default/Index.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/Controller.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/admin.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/debug.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/develop/debug.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/I18n.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/I18n.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/model/Customer.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/model/User.php</code></td>
+				</tr>
+								<tr>
+					<td><code>DOCROOT/library/MVC/Model/AbstractModel.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/Model.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/MemoizerTrait.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/i18n/fr.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Db.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/database.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/config/develop/database.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Database.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Database/MySQL.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/Database/MySQL.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/Request.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/HTTP/Exception.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/HTTP/Exception.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/HTTP/Exception/404.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/HTTP/Exception/404.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/classes/View.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/MB/View.php</code></td>
+				</tr>
+								<tr>
+					<td><code>APPPATH/views/mb/error.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/HTML.php</code></td>
+				</tr>
+								<tr>
+					<td><code>SYSPATH/classes/Debug.php</code></td>
+				</tr>
+							</table>
+		</div>
+				<h3><a href="#error576aaa21bc19eenvironment_loaded" onclick="return koggle('error576aaa21bc19eenvironment_loaded')">Loaded extensions</a> (54)</h3>
+		<div id="error576aaa21bc19eenvironment_loaded" class="collapsed">
+			<table cellspacing="0">
+								<tr>
+					<td><code>Core</code></td>
+				</tr>
+								<tr>
+					<td><code>date</code></td>
+				</tr>
+								<tr>
+					<td><code>ereg</code></td>
+				</tr>
+								<tr>
+					<td><code>libxml</code></td>
+				</tr>
+								<tr>
+					<td><code>openssl</code></td>
+				</tr>
+								<tr>
+					<td><code>pcre</code></td>
+				</tr>
+								<tr>
+					<td><code>zlib</code></td>
+				</tr>
+								<tr>
+					<td><code>bcmath</code></td>
+				</tr>
+								<tr>
+					<td><code>bz2</code></td>
+				</tr>
+								<tr>
+					<td><code>calendar</code></td>
+				</tr>
+								<tr>
+					<td><code>ctype</code></td>
+				</tr>
+								<tr>
+					<td><code>dba</code></td>
+				</tr>
+								<tr>
+					<td><code>dom</code></td>
+				</tr>
+								<tr>
+					<td><code>hash</code></td>
+				</tr>
+								<tr>
+					<td><code>fileinfo</code></td>
+				</tr>
+								<tr>
+					<td><code>filter</code></td>
+				</tr>
+								<tr>
+					<td><code>ftp</code></td>
+				</tr>
+								<tr>
+					<td><code>gettext</code></td>
+				</tr>
+								<tr>
+					<td><code>SPL</code></td>
+				</tr>
+								<tr>
+					<td><code>iconv</code></td>
+				</tr>
+								<tr>
+					<td><code>mbstring</code></td>
+				</tr>
+								<tr>
+					<td><code>session</code></td>
+				</tr>
+								<tr>
+					<td><code>posix</code></td>
+				</tr>
+								<tr>
+					<td><code>Reflection</code></td>
+				</tr>
+								<tr>
+					<td><code>standard</code></td>
+				</tr>
+								<tr>
+					<td><code>shmop</code></td>
+				</tr>
+								<tr>
+					<td><code>SimpleXML</code></td>
+				</tr>
+								<tr>
+					<td><code>soap</code></td>
+				</tr>
+								<tr>
+					<td><code>sockets</code></td>
+				</tr>
+								<tr>
+					<td><code>Phar</code></td>
+				</tr>
+								<tr>
+					<td><code>exif</code></td>
+				</tr>
+								<tr>
+					<td><code>sysvmsg</code></td>
+				</tr>
+								<tr>
+					<td><code>sysvsem</code></td>
+				</tr>
+								<tr>
+					<td><code>sysvshm</code></td>
+				</tr>
+								<tr>
+					<td><code>tokenizer</code></td>
+				</tr>
+								<tr>
+					<td><code>wddx</code></td>
+				</tr>
+								<tr>
+					<td><code>xml</code></td>
+				</tr>
+								<tr>
+					<td><code>xmlreader</code></td>
+				</tr>
+								<tr>
+					<td><code>xmlwriter</code></td>
+				</tr>
+								<tr>
+					<td><code>zip</code></td>
+				</tr>
+								<tr>
+					<td><code>apache2handler</code></td>
+				</tr>
+								<tr>
+					<td><code>PDO</code></td>
+				</tr>
+								<tr>
+					<td><code>curl</code></td>
+				</tr>
+								<tr>
+					<td><code>gd</code></td>
+				</tr>
+								<tr>
+					<td><code>intl</code></td>
+				</tr>
+								<tr>
+					<td><code>json</code></td>
+				</tr>
+								<tr>
+					<td><code>mcrypt</code></td>
+				</tr>
+								<tr>
+					<td><code>mongo</code></td>
+				</tr>
+								<tr>
+					<td><code>mysql</code></td>
+				</tr>
+								<tr>
+					<td><code>mysqli</code></td>
+				</tr>
+								<tr>
+					<td><code>pdo_mysql</code></td>
+				</tr>
+								<tr>
+					<td><code>readline</code></td>
+				</tr>
+								<tr>
+					<td><code>mhash</code></td>
+				</tr>
+								<tr>
+					<td><code>Zend OPcache</code></td>
+				</tr>
+							</table>
+		</div>
+						<h3><a href="#error576aaa21bc19eenvironment_session" onclick="return koggle('error576aaa21bc19eenvironment_session')">$_SESSION</a></h3>
+		<div id="error576aaa21bc19eenvironment_session" class="collapsed">
+			<table cellspacing="0">
+								<tr>
+					<td><code>lang</code></td>
+					<td><pre><small>string</small><span>(2)</span> "fr"</pre></td>
+				</tr>
+								<tr>
+					<td><code>admin</code></td>
+					<td><pre><small>array</small><span>(5)</span> <span>(
+    "user_id" => <small>string</small><span>(2)</span> "24"
+    "name" => <small>string</small><span>(18)</span> "Michaël Marinetti"
+    "firstname" => <small>string</small><span>(8)</span> "Michaël"
+    "lastname" => <small>string</small><span>(9)</span> "Marinetti"
+    "company" => <small>string</small><span>(9)</span> "Mediabong"
+)</span></pre></td>
+				</tr>
+								<tr>
+					<td><code>brand</code></td>
+					<td><pre><small>array</small><span>(4)</span> <span>(
+    "user_id" => <small>string</small><span>(2)</span> "41"
+    "firstname" => <small>string</small><span>(1)</span> "A"
+    "lastname" => <small>string</small><span>(10)</span> "Z [ADMIN] "
+    "company" => <small>string</small><span>(13)</span> "Annonceur 200"
+)</span></pre></td>
+				</tr>
+								<tr>
+					<td><code>head_messages</code></td>
+					<td><pre><small>array</small><span>(0)</span> </pre></td>
+				</tr>
+							</table>
+		</div>
+												<h3><a href="#error576aaa21bc19eenvironment_cookie" onclick="return koggle('error576aaa21bc19eenvironment_cookie')">$_COOKIE</a></h3>
+		<div id="error576aaa21bc19eenvironment_cookie" class="collapsed">
+			<table cellspacing="0">
+								<tr>
+					<td><code>PHPSESSID</code></td>
+					<td><pre><small>string</small><span>(26)</span> "qomoobgfmesi86rdpncmjr9kt1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>chksum</code></td>
+					<td><pre><small>string</small><span>(40)</span> "c644f9a5926f3f5c3c343ff6152c5581aa88bd60"</pre></td>
+				</tr>
+								<tr>
+					<td><code>id_login</code></td>
+					<td><pre><small>string</small><span>(2)</span> "24"</pre></td>
+				</tr>
+								<tr>
+					<td><code>login</code></td>
+					<td><pre><small>string</small><span>(1)</span> "1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>debug</code></td>
+					<td><pre><small>string</small><span>(1)</span> "1"</pre></td>
+				</tr>
+							</table>
+		</div>
+						<h3><a href="#error576aaa21bc19eenvironment_server" onclick="return koggle('error576aaa21bc19eenvironment_server')">$_SERVER</a></h3>
+		<div id="error576aaa21bc19eenvironment_server" class="collapsed">
+			<table cellspacing="0">
+								<tr>
+					<td><code>REDIRECT_MB_ENV</code></td>
+					<td><pre><small>string</small><span>(7)</span> "develop"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REDIRECT_PHP_VER</code></td>
+					<td><pre><small>string</small><span>(1)</span> "5"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REDIRECT_STATUS</code></td>
+					<td><pre><small>string</small><span>(3)</span> "200"</pre></td>
+				</tr>
+								<tr>
+					<td><code>MB_ENV</code></td>
+					<td><pre><small>string</small><span>(7)</span> "develop"</pre></td>
+				</tr>
+								<tr>
+					<td><code>PHP_VER</code></td>
+					<td><pre><small>string</small><span>(1)</span> "5"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_HOST</code></td>
+					<td><pre><small>string</small><span>(17)</span> "loc.mediabong.com"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_USER_AGENT</code></td>
+					<td><pre><small>string</small><span>(99)</span> "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.7.1 FirePHP/0.7.4"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_ACCEPT</code></td>
+					<td><pre><small>string</small><span>(63)</span> "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_ACCEPT_LANGUAGE</code></td>
+					<td><pre><small>string</small><span>(23)</span> "fr,en-US;q=0.7,en;q=0.3"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_ACCEPT_ENCODING</code></td>
+					<td><pre><small>string</small><span>(13)</span> "gzip, deflate"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_DNT</code></td>
+					<td><pre><small>string</small><span>(1)</span> "1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_COOKIE</code></td>
+					<td><pre><small>string</small><span>(116)</span> "PHPSESSID=qomoobgfmesi86rdpncmjr9kt1; chksum=c644f9a5926f3f5c3c343ff6152c5581aa88bd60; id_login=24; login=1; debug=1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_X_INSIGHT</code></td>
+					<td><pre><small>string</small><span>(8)</span> "activate"</pre></td>
+				</tr>
+								<tr>
+					<td><code>HTTP_CONNECTION</code></td>
+					<td><pre><small>string</small><span>(10)</span> "keep-alive"</pre></td>
+				</tr>
+								<tr>
+					<td><code>PATH</code></td>
+					<td><pre><small>string</small><span>(60)</span> "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_SIGNATURE</code></td>
+					<td><pre><small>string</small><span>(78)</span> "&lt;address&gt;Apache/2.4.10 (Debian) Server at loc.mediabong.com Port 80&lt;/address&gt;
+"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_SOFTWARE</code></td>
+					<td><pre><small>string</small><span>(22)</span> "Apache/2.4.10 (Debian)"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_NAME</code></td>
+					<td><pre><small>string</small><span>(17)</span> "loc.mediabong.com"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_ADDR</code></td>
+					<td><pre><small>string</small><span>(9)</span> "127.0.0.1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_PORT</code></td>
+					<td><pre><small>string</small><span>(2)</span> "80"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REMOTE_ADDR</code></td>
+					<td><pre><small>string</small><span>(9)</span> "127.0.0.1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>DOCUMENT_ROOT</code></td>
+					<td><pre><small>string</small><span>(34)</span> "/data/www/mediabong.com/www/public"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REQUEST_SCHEME</code></td>
+					<td><pre><small>string</small><span>(4)</span> "http"</pre></td>
+				</tr>
+								<tr>
+					<td><code>CONTEXT_PREFIX</code></td>
+					<td><pre><small>string</small><span>(0)</span> ""</pre></td>
+				</tr>
+								<tr>
+					<td><code>CONTEXT_DOCUMENT_ROOT</code></td>
+					<td><pre><small>string</small><span>(34)</span> "/data/www/mediabong.com/www/public"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_ADMIN</code></td>
+					<td><pre><small>string</small><span>(19)</span> "webmaster@localhost"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SCRIPT_FILENAME</code></td>
+					<td><pre><small>string</small><span>(44)</span> "/data/www/mediabong.com/www/public/index.php"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REMOTE_PORT</code></td>
+					<td><pre><small>string</small><span>(5)</span> "49448"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REDIRECT_URL</code></td>
+					<td><pre><small>string</small><span>(36)</span> "/theme/admin/images/lang_flag/compng"</pre></td>
+				</tr>
+								<tr>
+					<td><code>GATEWAY_INTERFACE</code></td>
+					<td><pre><small>string</small><span>(7)</span> "CGI/1.1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SERVER_PROTOCOL</code></td>
+					<td><pre><small>string</small><span>(8)</span> "HTTP/1.1"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REQUEST_METHOD</code></td>
+					<td><pre><small>string</small><span>(3)</span> "GET"</pre></td>
+				</tr>
+								<tr>
+					<td><code>QUERY_STRING</code></td>
+					<td><pre><small>string</small><span>(0)</span> ""</pre></td>
+				</tr>
+								<tr>
+					<td><code>REQUEST_URI</code></td>
+					<td><pre><small>string</small><span>(36)</span> "/theme/admin/images/lang_flag/compng"</pre></td>
+				</tr>
+								<tr>
+					<td><code>SCRIPT_NAME</code></td>
+					<td><pre><small>string</small><span>(10)</span> "/index.php"</pre></td>
+				</tr>
+								<tr>
+					<td><code>PATH_INFO</code></td>
+					<td><pre><small>string</small><span>(36)</span> "/theme/admin/images/lang_flag/compng"</pre></td>
+				</tr>
+								<tr>
+					<td><code>PATH_TRANSLATED</code></td>
+					<td><pre><small>string</small><span>(55)</span> "redirect:/index.php/theme/admin/images/lang_flag/compng"</pre></td>
+				</tr>
+								<tr>
+					<td><code>PHP_SELF</code></td>
+					<td><pre><small>string</small><span>(46)</span> "/index.php/theme/admin/images/lang_flag/compng"</pre></td>
+				</tr>
+								<tr>
+					<td><code>REQUEST_TIME_FLOAT</code></td>
+					<td><pre><small>float</small> 1466608161,762</pre></td>
+				</tr>
+								<tr>
+					<td><code>REQUEST_TIME</code></td>
+					<td><pre><small>integer</small> 1466608161</pre></td>
+				</tr>
+							</table>
+		</div>
+			</div>
+</div>
