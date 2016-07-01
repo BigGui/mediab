@@ -53,6 +53,7 @@ $(function() {
 </script>
 
 <link rel="stylesheet" type="text/css" href="dev-mediabong_fichiers/jquery.css" media="screen">
+<link rel="stylesheet" href="../chosen/chosen.css">
 <link type="text/css" href="dev-mediabong_fichiers/mediabong.css" rel="stylesheet" media="screen">
 <link type="text/css" href="dev-mediabong_fichiers/admin.css" rel="stylesheet" media="screen"><style type="text/css">.fancybox-margin{margin-right:16px;}</style><link href="dev-mediabong_fichiers/socialwidgets.css" type="text/css" rel="stylesheet"><style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
 /** reset styling **/
@@ -657,7 +658,79 @@ $(document).ready(function(){
       <div class="page-header">
         <h1>Listes déroulantes</h1>
       </div>
+        <!--
+            Simple combobox with style :
+                Add 'chosen-select' class
+        -->
+        <select data-placeholder="Faites votre choix" class="chosen-select" >
+            <option value=""></option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+        </select>
 
+
+        <!--
+            Combobox with search field inside :
+                Add 'chosen-select-search' class
+        -->
+        <select data-placeholder="Faites votre choix" class="chosen-select-search" >
+            <option value=""></option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+        </select>
+
+        <!--
+            Multi choice combobox :
+                Add 'chosen-select' class
+                Add muliple="true"
+        -->
+        <select data-placeholder="Faites votre choix" class="chosen-select" multiple="true">
+            <option value=""></option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+        </select>
+
+        <!--
+            Combobox with group :
+                Use optgroup with label
+        -->
+        <select data-placeholder="Faites votre choix" class="chosen-select-search">
+            <option value=""></option>
+            <optgroup label="Title 1">
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Aland Islands">Aland Islands</option>
+            </optgroup>
+            <optgroup label="Title 2">
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+            </optgroup>
+        </select>
 
 
       <div class="page-header">
@@ -815,4 +888,20 @@ var boards = {"default":"default","admin":"admin","producer":"producer","publish
 $(document).ready(function(){loginBox_addUser({"firstname":"Micha\u00ebl","lastname":"Marinetti","company":"Mediabong","id":"24","type":"admin","board":"Admin"});loginBox_addUser({"firstname":"A","lastname":"Z [ADMIN] ","company":"Annonceur 200","id":"41","type":"brand","board":"Brand"});})
 /*=============*/
 </script>
+
+  <script src="../chosen/chosen.jquery.js" type="text/javascript"></script>
+  <!-- <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script> -->
+  <script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {disable_search_threshold: 9999},
+      '.chosen-select-search'    : {},
+      // '.chosen-select-deselect'  : {allow_single_deselect:true},
+      // '.chosen-select-no-single' : {disable_search_threshold:10},
+      // '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      // '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  </script>
 </body></html>
