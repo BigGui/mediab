@@ -5990,7 +5990,7 @@ button.close {
   filter: alpha(opacity=90);
 }
 .tooltip.top {
-  margin-top: -7px;
+  margin-top: -3px;
   padding: 5px 0;
 }
 .tooltip.right {
@@ -6863,6 +6863,37 @@ body.with-sidebar #page-content-wrapper {
   background-color: #6c6c6c;
   color: #ffffff;
 }
+/*
+
+// initial variables: one (or more) arrays of the same size
+@boards :       ~"admin", ~"agency", ~"publisher", ~"producer", ~"brand",  ~"client";
+@boards-colors: #ffa600,  #ab46d1,   #2282bf,      #9e794a,     #9d3959,   #70c6b4;
+
+// the iterator start at array size, then will be decremented
+@iterator : length(@boards);
+.loop-example(@boards; @iterator) when (@iterator > 0) {
+    // call the same loop as many times as required to reach 0
+    .loop-example(@boards; (@iterator - 1));
+
+    // use the variables passed in parameters
+    @board : extract(@boards, @iterator);
+    // or retrieve some variables defined before
+    @board-color : extract(@boards-colors, @iterator);
+
+    // start to write css with theses variables
+    .board-@{board} {
+        .someclass{
+            background-color: @board-color;
+        }
+    }
+}
+// call the loop
+.loop-example(@boards; @iterator);
+
+*/
+h1 a.sample-section {
+  color: #333!important;
+}
 /*ATECNA*/
 @font-face {
   font-family: 'icomoon';
@@ -6891,8 +6922,24 @@ body.with-sidebar #page-content-wrapper {
 .icon-fin:before {
   content: "\e92c";
 }
+.icon-debut:before {
+  content: "\e92c" !important;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 .icon-suivant:before {
   content: "\e92d";
+}
+.icon-precedent:before {
+  content: "\e92d" !important;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .icon-account:before {
   content: "\e900";
@@ -7041,34 +7088,7 @@ body.with-sidebar #page-content-wrapper {
   line-height: 24px;
   margin: 5px;
 }
-.btn .icon-balise {
-  font-size: 22px;
-}
-.btn .icon-connection {
-  font-size: 22px;
-}
-.btn .icon-editer {
-  font-size: 22px;
-}
-.btn .icon-dupliquer {
-  font-size: 22px;
-}
-.btn .icon-erase {
-  font-size: 22px;
-}
-.btn .icon-no-actualiser {
-  font-size: 22px;
-}
-.btn .icon-pause2 {
-  font-size: 22px;
-}
-.btn .icon-stats {
-  font-size: 22px;
-}
-.btn .icon-valider {
-  font-size: 22px;
-}
-.btn .icon-voir {
+.btn .icon {
   font-size: 22px;
 }
 .btn-lg,
@@ -7087,122 +7107,146 @@ body.with-sidebar #page-content-wrapper {
   line-height: 48px;
   margin: 5px;
 }
-.btn-lg .icon-liste {
+.btn-lg .icon {
   font-size: 27px;
 }
-.btn-lg .icon-plus {
-  font-size: 27px;
-}
-.btn-lg .icon-editer {
-  font-size: 27px;
-}
-.btn-lg .icon-erase {
-  font-size: 27px;
-}
-.btn-lg .icon-last-video {
-  font-size: 27px;
-}
-.btn-lg .icon-top-video {
-  font-size: 27px;
-}
-.btn-lg .icon-valider {
-  font-size: 27px;
-}
-.btn-admin {
+.btn-admin,
+.board-admin .btn-default {
   color: #ffa600;
   background-color: #e4e4e4;
 }
-.btn-admin:hover {
+.btn-admin:hover,
+.board-admin .btn-default:hover {
   color: #fff;
   background-color: #ffa600;
 }
-.btn-admin:focus {
+.btn-admin:focus,
+.board-admin .btn-default:focus {
   color: #fff;
   background-color: #ffa600;
 }
-.btn-admin:active {
+.btn-admin:active,
+.board-admin .btn-default:active {
   color: #fff;
   background-color: #ffa600;
 }
-.btn-agency {
+.board-admin .form-control:focus {
+  border: solid 2px #ffa600;
+}
+.btn-agency,
+.board-agency .btn-default {
   color: #ab46d1;
   background-color: #e4e4e4;
 }
-.btn-agency:hover {
+.btn-agency:hover,
+.board-agency .btn-default:hover {
   color: #fff;
   background-color: #ab46d1;
 }
-.btn-agency:focus {
+.btn-agency:focus,
+.board-agency .btn-default:focus {
   color: #fff;
   background-color: #ab46d1;
 }
-.btn-agency:active {
+.btn-agency:active,
+.board-agency .btn-default:active {
   color: #fff;
   background-color: #ab46d1;
 }
-.btn-publisher {
+.board-agency .form-control:focus {
+  border: solid 2px #ab46d1;
+}
+.btn-publisher,
+.board-publisher .btn-default {
   color: #2282bf;
   background-color: #e4e4e4;
 }
-.btn-publisher:hover {
+.btn-publisher:hover,
+.board-publisher .btn-default:hover {
   color: #fff;
   background-color: #2282bf;
 }
-.btn-publisher:focus {
+.btn-publisher:focus,
+.board-publisher .btn-default:focus {
   color: #fff;
   background-color: #2282bf;
 }
-.btn-publisher:active {
+.btn-publisher:active,
+.board-publisher .btn-default:active {
   color: #fff;
   background-color: #2282bf;
 }
-.btn-producer {
+.board-publisher .form-control:focus {
+  border: solid 2px #2282bf;
+}
+.btn-producer,
+.board-producer .btn-default {
   color: #9e794a;
   background-color: #e4e4e4;
 }
-.btn-producer:hover {
+.btn-producer:hover,
+.board-producer .btn-default:hover {
   color: #fff;
   background-color: #9e794a;
 }
-.btn-producer:focus {
+.btn-producer:focus,
+.board-producer .btn-default:focus {
   color: #fff;
   background-color: #9e794a;
 }
-.btn-producer:active {
+.btn-producer:active,
+.board-producer .btn-default:active {
   color: #fff;
   background-color: #9e794a;
 }
-.btn-brand {
+.board-producer .form-control:focus {
+  border: solid 2px #9e794a;
+}
+.btn-brand,
+.board-brand .btn-default {
   color: #9d3959;
   background-color: #e4e4e4;
 }
-.btn-brand:hover {
+.btn-brand:hover,
+.board-brand .btn-default:hover {
   color: #fff;
   background-color: #9d3959;
 }
-.btn-brand:focus {
+.btn-brand:focus,
+.board-brand .btn-default:focus {
   color: #fff;
   background-color: #9d3959;
 }
-.btn-brand:active {
+.btn-brand:active,
+.board-brand .btn-default:active {
   color: #fff;
   background-color: #9d3959;
 }
-.btn-clients {
+.board-brand .form-control:focus {
+  border: solid 2px #9d3959;
+}
+.btn-client,
+.board-client .btn-default {
   color: #70c6b4;
   background-color: #e4e4e4;
 }
-.btn-clients:hover {
+.btn-client:hover,
+.board-client .btn-default:hover {
   color: #fff;
   background-color: #70c6b4;
 }
-.btn-clients:focus {
+.btn-client:focus,
+.board-client .btn-default:focus {
   color: #fff;
   background-color: #70c6b4;
 }
-.btn-clients:active {
+.btn-client:active,
+.board-client .btn-default:active {
   color: #fff;
   background-color: #70c6b4;
+}
+.board-client .form-control:focus {
+  border: solid 2px #70c6b4;
 }
 .btn-red {
   color: #e84646;
@@ -7248,7 +7292,42 @@ body.with-sidebar #page-content-wrapper {
   width: 90%;
   height: 100%;
   margin-right: -100%;
+}
+.board-admin .page-title h1:after {
   border-bottom: 2px solid #ffa600;
+}
+.board-admin .page-header h1:after {
+  border-top: 2px solid #ffa600;
+}
+.board-agency .page-title h1:after {
+  border-bottom: 2px solid #ab46d1;
+}
+.board-agency .page-header h1:after {
+  border-top: 2px solid #ab46d1;
+}
+.board-publisher .page-title h1:after {
+  border-bottom: 2px solid #2282bf;
+}
+.board-publisher .page-header h1:after {
+  border-top: 2px solid #2282bf;
+}
+.board-producer .page-title h1:after {
+  border-bottom: 2px solid #9e794a;
+}
+.board-producer .page-header h1:after {
+  border-top: 2px solid #9e794a;
+}
+.board-brand .page-title h1:after {
+  border-bottom: 2px solid #9d3959;
+}
+.board-brand .page-header h1:after {
+  border-top: 2px solid #9d3959;
+}
+.board-client .page-title h1:after {
+  border-bottom: 2px solid #70c6b4;
+}
+.board-client .page-header h1:after {
+  border-top: 2px solid #70c6b4;
 }
 .form-control {
   display: block;
@@ -7260,9 +7339,26 @@ body.with-sidebar #page-content-wrapper {
   padding: 10px;
 }
 .form-control:focus {
-  border: solid 2px #ffa600;
   outline: 0;
   box-shadow: none;
+}
+.board-admin .form-control:focus {
+  border: solid 2px #ffa600;
+}
+.board-agency .form-control:focus {
+  border: solid 2px #ab46d1;
+}
+.board-publisher .form-control:focus {
+  border: solid 2px #2282bf;
+}
+.board-producer .form-control:focus {
+  border: solid 2px #9e794a;
+}
+.board-brand .form-control:focus {
+  border: solid 2px #9d3959;
+}
+.board-client .form-control:focus {
+  border: solid 2px #70c6b4;
 }
 .page-header h1 {
   font-family: 'Teko', sans-serif;
@@ -7277,7 +7373,6 @@ body.with-sidebar #page-content-wrapper {
   width: 100%;
   margin-right: -100%;
   margin-left: 10px;
-  border-top: 2px solid #ffa600;
 }
 .page-link span {
   font-family: 'Teko', sans-serif !important;
@@ -7286,50 +7381,50 @@ body.with-sidebar #page-content-wrapper {
 .board-admin .page-link span {
   color: #ffa600 !important;
 }
-.board-admin .active a {
+.board-admin .pagination .active a.page-link {
   background: #ffa600 !important;
   border: 2px solid #ffa600 !important;
 }
 .board-agency .page-link span {
   color: #ab46d1 !important;
 }
-.board-agency .active a {
+.board-agency .pagination .active a.page-link {
   background: #ab46d1 !important;
   border: 2px solid #ab46d1 !important;
 }
 .board-publisher .page-link span {
   color: #2282bf !important;
 }
-.board-publisher .active a {
+.board-publisher .pagination .active a.page-link {
   background: #2282bf !important;
   border: 2px solid #2282bf !important;
 }
 .board-producer .page-link span {
   color: #9e794a !important;
 }
-.board-producer .active a {
+.board-producer .pagination .active a.page-link {
   background: #9e794a !important;
   border: 2px solid #9e794a !important;
 }
 .board-brand .page-link span {
   color: #9d3959 !important;
 }
-.board-brand .active a {
+.board-brand .pagination .active a.page-link {
   background: #9d3959 !important;
   border: 2px solid #9d3959 !important;
 }
 .board-client .page-link span {
   color: #70c6b4 !important;
 }
-.board-client .active a {
+.board-client .pagination .active a.page-link {
   background: #70c6b4 !important;
   border: 2px solid #70c6b4 !important;
 }
-.icon-search {
+.input-group-addon .icon-search {
   font-size: 34px;
   color: #fff;
 }
-.form-control {
+.input-group .form-control {
   border-right: none;
 }
 .input-group-addon {
@@ -7344,38 +7439,56 @@ body.with-sidebar #page-content-wrapper {
 .board-admin .input-group-addon {
   background: #ffa600 !important;
 }
-.board-agency .input-group-addon {
-  background: #ab46d1 !important;
-}
-.board-publisher .input-group-addon {
-  background: #2282bf !important;
-}
-.board-producer .input-group-addon {
-  background: #9e794a !important;
-}
-.board-brand .input-group-addon {
-  background: #9d3959 !important;
-}
-.board-client .input-group-addon {
-  background: #70c6b4 !important;
-}
 .board-admin a {
   color: #ffa600 !important;
+}
+.board-admin .icon {
+  color: #ffa600;
+}
+.board-agency .input-group-addon {
+  background: #ab46d1 !important;
 }
 .board-agency a {
   color: #ab46d1 !important;
 }
+.board-agency .icon {
+  color: #ab46d1;
+}
+.board-publisher .input-group-addon {
+  background: #2282bf !important;
+}
 .board-publisher a {
   color: #2282bf !important;
+}
+.board-publisher .icon {
+  color: #2282bf;
+}
+.board-producer .input-group-addon {
+  background: #9e794a !important;
 }
 .board-producer a {
   color: #9e794a !important;
 }
+.board-producer .icon {
+  color: #9e794a;
+}
+.board-brand .input-group-addon {
+  background: #9d3959 !important;
+}
 .board-brand a {
   color: #9d3959 !important;
 }
+.board-brand .icon {
+  color: #9d3959;
+}
+.board-client .input-group-addon {
+  background: #70c6b4 !important;
+}
 .board-client a {
   color: #70c6b4 !important;
+}
+.board-client .icon {
+  color: #70c6b4;
 }
 .pagination > li > a,
 .pagination > li > span {
@@ -7390,6 +7503,10 @@ body.with-sidebar #page-content-wrapper {
 }
 .pagination .active a {
   color: #fff!important;
+}
+.pagination .btn .icon {
+  font-size: 35px!important;
+  display: inline-block;
 }
 .daterangepicker th.month {
   font-size: 40px!important;
@@ -7418,7 +7535,6 @@ body.with-sidebar #page-content-wrapper {
 }
 .daterangepicker .calendar th {
   font-family: 'Open Sans', sans-serif;
-  color: #ffa600;
   font-size: 26px;
   font-weight: bold;
   text-transform: uppercase;
@@ -7427,22 +7543,118 @@ body.with-sidebar #page-content-wrapper {
 .daterangepicker .calendar td {
   border-radius: 0px!important;
 }
-.daterangepicker .calendar td:hover {
-  background-color: #ffa600 !important;
-  color: #fff!important;
-}
-.daterangepicker .calendar td:focus {
-  background-color: #ffa600 !important;
-  color: #fff!important;
-}
 .daterangepicker td.start-date.end-date {
   border-radius: 0px!important;
 }
-.glyphicon {
-  font-family: 'icomoon' !important;
-  color: #ffa600;
+.board-admin .daterangepicker .glyphicon {
+  color: #70c6b4;
 }
-.glyphicon-chevron-left::before {
+.board-admin .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-admin .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-admin .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-admin .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-agency .daterangepicker .glyphicon {
+  color: #70c6b4;
+}
+.board-agency .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-agency .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-agency .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-agency .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-publisher .daterangepicker .glyphicon {
+  color: #70c6b4;
+}
+.board-publisher .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-publisher .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-publisher .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-publisher .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-producer .daterangepicker .glyphicon {
+  color: #70c6b4;
+}
+.board-producer .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-producer .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-producer .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-producer .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-brand .daterangepicker .glyphicon {
+  color: #70c6b4;
+}
+.board-brand .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-brand .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-brand .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-brand .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-client .daterangepicker .glyphicon {
+  color: #70c6b4;
+}
+.board-client .daterangepicker .active {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-client .daterangepicker .active th {
+  color: #70c6b4;
+}
+.board-client .daterangepicker .active td:hover {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.board-client .daterangepicker .active td:focus {
+  background-color: #70c6b4 !important;
+  color: #fff!important;
+}
+.daterangepicker .glyphicon-chevron-left::before {
   content: "" !important;
   font-size: 35px!important;
   display: inline-block;
@@ -7452,7 +7664,7 @@ body.with-sidebar #page-content-wrapper {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.glyphicon-chevron-right::before {
+.daterangepicker .glyphicon-chevron-right::before {
   content: "\e92d" !important;
   font-size: 35px!important;
 }
