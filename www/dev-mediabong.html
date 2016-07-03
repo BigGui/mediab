@@ -892,12 +892,8 @@ $(document).ready(function(){loginBox_addUser({"firstname":"Micha\u00ebl","lastn
   <!-- <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script> -->
   <script type="text/javascript">
     var config = {
-      '.chosen-select'           : {disable_search_threshold: 9999},
-      '.chosen-select-search'    : {},
-      // '.chosen-select-deselect'  : {allow_single_deselect:true},
-      // '.chosen-select-no-single' : {disable_search_threshold:10},
-      // '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-      // '.chosen-select-width'     : {width:"95%"}
+      '.chosen-select'        : {disable_search_threshold: 9999},
+      '.chosen-select-search' : {}
     }
     for (var selector in config) {
       $(selector).chosen(config[selector]);

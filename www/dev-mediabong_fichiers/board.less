@@ -131,6 +131,37 @@ h1 a.sample-section{
 .icon-voir:before {content: "\e92a";}
 .icon-volume:before {content: "\e92b";}
 
+/** Mixins icon */
+.make-icon() {
+    &:before {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+.make-icon-search() {
+    .make-icon();
+    &:before {
+        content: "\e924";
+    }
+}
+.make-icon-close() {
+    .make-icon();
+    &:before {
+        content: "\e908";
+    }
+}
+
+
 @btn-bg          : #e4e4e4;
 @btn-color-hover : #fff;
 
