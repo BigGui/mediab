@@ -7738,17 +7738,21 @@ h1 a.sample-section {
 .chosen-container-multi {
   border: 2px solid #c2c2c2;
   border-radius: 6px;
+  background: #fff;
 }
 .ph-chosen-box-style,
 .chosen-container-single .chosen-single,
 .chosen-container-multi {
   height: 55px;
   line-height: 51px;
-  background: transparent;
 }
 .chosen-select,
 .chosen-select-search {
   width: 342px;
+}
+.form-group .chosen-select,
+.form-group .chosen-select-search {
+  width: 100%;
 }
 /**
   * FROM SASS CHOSEN
@@ -7761,7 +7765,7 @@ h1 a.sample-section {
   vertical-align: middle;
   font-size: 20px;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 18px;
+  margin-bottom: 0;
 }
 .chosen-container * {
   box-sizing: border-box;
@@ -8002,7 +8006,7 @@ h1 a.sample-section {
   height: 25px;
   outline: 0;
   border: 0 !important;
-  background: transparent !important;
+  /*background: transparent !important;*/
   color: #999;
   font-size: 100%;
   line-height: normal;
@@ -8112,7 +8116,7 @@ h1 a.sample-section {
 /* @end */
 /* @group Active  */
 .chosen-container-active.chosen-with-drop .chosen-single {
-  background: transparent;
+  /*background: transparent;*/
 }
 .chosen-container-active.chosen-with-drop .chosen-single div {
   transform: rotate(180deg);
@@ -8981,6 +8985,109 @@ table.dataTable tbody tr.selected a,
 table.dataTable tbody th.selected a,
 table.dataTable tbody td.selected a {
   color: #a2d4ed;
+}
+.Accordion {
+  background-color: #f6f6f6;
+  border-radius: 6px;
+}
+.Accordion__item {
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+.Accordion__item__head {
+  padding: 0;
+}
+.Accordion__item__head__ttl {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 15px 0;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  color: #4c4c4c;
+}
+.Accordion__item__head__ttl a {
+  color: #4c4c4c !important;
+  text-decoration: none;
+}
+.Accordion__item__head__ttl:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 90%;
+  height: 100%;
+  margin-right: -100%;
+  border-bottom: 2px solid #ffa600;
+  margin-left: 40px;
+}
+.Accordion__item__head__ttl__btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 60px;
+  margin-top: -35px;
+  border: 0;
+  text-align: right;
+  background-color: #f6f6f6;
+}
+.Accordion__item__head__ttl__btn:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 15px solid #ffa600;
+}
+.Accordion__item__head__ttl__btn:after {
+  display: inline-block;
+}
+.Form-dual {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.Form-dual__field {
+  width: 48%;
+}
+.Form-dual__field__label {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffa600;
+}
+.Form-dual__field .radio label,
+.Form-dual__field .checkbox label {
+  padding-left: 0;
+  color: #a3a3a3;
+}
+input[type=checkbox].fake {
+  display: none;
+}
+.Fake-checkbox {
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  vertical-align: middle;
+  background-image: url("images/sprite-check.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.Fake-checkbox:hover {
+  background-position: -58px 0;
+}
+.Fake-checkbox--active {
+  background-position: -29px 0;
+}
+.Fake-checkbox--active:hover {
+  background-position: -87px 0;
+}
+.form-group .Fake-checkbox {
+  margin-right: 20px;
 }
 .container-full {
   margin: 0 auto;

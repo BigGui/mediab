@@ -4,7 +4,7 @@
 @select-border-color: #c2c2c2;
 @select-border-width: 2px;
 @select-border-radius: 6px;
-@select-margin-bottom: 18px;
+@select-margin-bottom: 0;
 @select-active-bg-color: #ffa600;
 @select-color: #9c9c9c;
 @select-placeholder-color: #a3a3a3;
@@ -16,6 +16,7 @@
 .ph-chosen-border {
 	border: @select-border-width solid @select-border-color;
 	border-radius: @select-border-radius;
+    background: #fff;
 }
 
 // Global style
@@ -23,12 +24,16 @@
 	&:extend(.ph-chosen-border);
 	height: @select-height;
 	line-height: @select-height - 4px;
-	background: transparent;
 }
 
 .chosen-select {
 	&, &-search {
 		width: 342px
+	}
+	.form-group & {
+		&, &-search {
+			width: 100%;
+		}
 	}
 }
 
@@ -269,7 +274,7 @@
         height: 25px;
         outline: 0;
         border: 0 !important;
-        background: transparent !important;
+        /*background: transparent !important;*/
         color: #999;
         font-size: 100%;
         line-height: normal;
@@ -377,7 +382,7 @@
     .chosen-single {
       // @include background-image(linear-gradient(#eee 20%, #fff 80%));
 	  &:extend(.ph-chosen-border);
-	  background: transparent;
+	  /*background: transparent;*/
     }
     .chosen-single div {
 	  transform: rotate(180deg);
