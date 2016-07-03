@@ -7741,13 +7741,13 @@ h1 a.sample-section {
 .ph-chosen-box-style,
 .chosen-container-single .chosen-single,
 .chosen-container-multi .chosen-choices {
-  height: 50px;
-  line-height: 50px;
+  height: 55px;
+  line-height: 51px;
   background: transparent;
 }
 .chosen-select,
 .chosen-select-search {
-  width: 340px;
+  width: 342px;
 }
 /**
   * FROM SASS CHOSEN
@@ -7804,13 +7804,13 @@ h1 a.sample-section {
   position: relative;
   display: block;
   overflow: hidden;
-  padding: 0 0 0 8px;
-  color: #444;
+  padding: 0 0 0 12px;
+  color: #9c9c9c !important;
   text-decoration: none;
   white-space: nowrap;
 }
 .chosen-container-single .chosen-default {
-  color: #999;
+  color: #a3a3a3 !important;
 }
 .chosen-container-single .chosen-single span {
   display: block;
@@ -7878,12 +7878,14 @@ h1 a.sample-section {
 .chosen-container .chosen-results {
   color: #444;
   position: relative;
+  /*
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0;
-  padding: 0;
   max-height: 240px;
   -webkit-overflow-scrolling: touch;
+  */
+  margin: 0;
+  padding: 0;
   border-radius: 6px;
 }
 .chosen-container .chosen-results li {
@@ -7932,7 +7934,7 @@ h1 a.sample-section {
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 0 5px;
+  padding: 0 5px 0 12px;
   width: 100%;
   background-color: #fff;
   cursor: text;

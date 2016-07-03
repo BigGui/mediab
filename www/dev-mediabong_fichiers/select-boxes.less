@@ -1,12 +1,13 @@
 
-@select-height: 50px;
+@select-height: 55px;
 @select-font-size: 20px;
 @select-border-color: #c2c2c2;
 @select-border-width: 2px;
 @select-border-radius: 6px;
 @select-margin-bottom: 18px;
 @select-active-bg-color: #ffa600;
-@select-color: #a3a3a3;
+@select-color: #9c9c9c;
+@select-placeholder-color: #a3a3a3;
 @select-list-color: #9c9c9c;
 
 // Border style
@@ -19,13 +20,13 @@
 .ph-chosen-box-style {
 	&:extend(.ph-chosen-border);
 	height: @select-height;
-	line-height: @select-height;
+	line-height: @select-height - 4px;
 	background: transparent;
 }
 
 .chosen-select {
 	&, &-search {
-		width: 340px
+		width: 342px
 	}
 }
 
@@ -93,13 +94,13 @@
     position: relative;
     display: block;
     overflow: hidden;
-    padding: 0 0 0 8px;
-    color: #444;
+    padding: 0 0 0 12px;
+    color: @select-color !important;
     text-decoration: none;
     white-space: nowrap;
   }
   .chosen-default {
-    color: #999;
+    color: @select-placeholder-color !important;
   }
   .chosen-single span {
     display: block;
@@ -173,12 +174,14 @@
 .chosen-container .chosen-results {
   color: #444;
   position: relative;
+  /*
   overflow-x: hidden;
   overflow-y: auto;
-  margin: 0;
-  padding: 0;
   max-height: 240px;
   -webkit-overflow-scrolling: touch;
+  */
+  margin: 0;
+  padding: 0;
   border-radius: @select-border-radius;
   li {
     display: none;
@@ -230,7 +233,7 @@
     position: relative;
     overflow: hidden;
     margin: 0;
-    padding: 0 5px;
+    padding: 0 5px 0 12px;
     width: 100%;
     background-color: #fff;
     cursor: text;
