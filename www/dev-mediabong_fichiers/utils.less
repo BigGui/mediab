@@ -1,0 +1,18 @@
+//
+// UTILS
+//
+
+
+.make-cursor(@width; @height; @color) {
+	&:after {
+		content: "";
+		
+		width: 0;  height: 0; 
+		border-left: @width/2 solid transparent;
+		border-right: @width/2 solid transparent;
+  
+		border-top: @height solid @color;
+	}
+} 
+
+
