@@ -1,0 +1,145 @@
+//
+// BLOCPLAYERS
+//
+
+@accoridion-bg-color: #f6f6f6;
+@accoridion-ttl-color: #4c4c4c;
+@accoridion-border-radius: 6px;
+
+.Accordion {
+	background-color: @accoridion-bg-color;
+	border-radius: @accoridion-border-radius;
+	&__item {
+		background-color: @accoridion-bg-color;
+		padding: 20px;
+		&__head {
+			padding: 0;
+			&__ttl {
+				position: relative;
+				width: 100%;
+				margin: 0;
+				padding: 0 0 15px 0;
+	        	overflow: hidden;	
+				font-family: 'Open Sans', sans-serif;
+				font-size: 40px;
+				color: @accoridion-ttl-color;
+
+				a {
+					color: @accoridion-ttl-color !important;
+					text-decoration: none;
+				}
+
+			    &:after {
+			        content:'';
+			        display:inline-block;
+			        vertical-align:middle;
+			        width:90%;
+			        height:100%;
+			        margin-right:-100%;
+	            	border-bottom : 2px solid extract(@boards-colors, 1);
+	            	margin-left: 40px;
+			    }
+
+			    &__btn {
+			    	position: absolute;
+			    	top: 50%;
+			    	right: 0;
+			    	width: 60px;
+			    	margin-top:-35px;
+					border: 0;
+					text-align: right;
+					background-color: @accoridion-bg-color;
+			    	.make-cursor(36px; 15px; extract(@boards-colors, 1)	);
+			    	&:after {
+			    		display: inline-block;
+			    	}
+			    }
+			}
+		}
+		&__content {
+
+		}
+	}
+	
+}
+
+
+@form-text-color: #a3a3a3;
+
+.Form-dual {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	&__field {
+		width: 48%;
+		&__label {
+			width: 100%;
+			font-size: 20px;
+			font-weight: bold;
+			color: extract(@boards-colors, 1);
+		}
+		.radio, .checkbox {
+			label {
+				padding-left: 0;
+				color: @form-text-color;
+			}
+		}
+	}
+}
+
+
+input[type=checkbox],
+input[type=radio] {
+	&.fake {
+		display: none;
+	}
+}
+.Fake-checkbox {
+	display: inline-block;
+	width: 29px;
+	height: 29px;
+	vertical-align: middle;
+	background-image: url("../img/sprite-check.png");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	&:hover {
+		background-position: -58px 0;
+	}
+	&--active {
+		background-position: -29px 0;
+		&:hover {
+			background-position: -87px 0;
+		}
+	}
+
+	.form-group & {
+		margin-right: 20px;
+	}
+}
+
+.Fake-radio {
+	display: inline-block;
+	width: 29px;
+	height: 29px;
+	vertical-align: middle;
+	background-image: url("../img/sprite-check.png");
+	background-repeat: no-repeat;
+	background-position: 0 -58px;
+	&:hover {
+		background-position: -58px -58px;
+	}
+	&--active {
+		background-position: -29px -58px;
+		&:hover {
+			background-position: -87px -58px;
+		}
+	}
+
+	.form-group & {
+		margin-right: 20px;
+	}
+}

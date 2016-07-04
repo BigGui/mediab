@@ -1,0 +1,643 @@
+// {{{ start loop sample
+/*
+
+// initial variables: one (or more) arrays of the same size
+@boards :       ~"admin", ~"agency", ~"publisher", ~"producer", ~"brand",  ~"client";
+@boards-colors: #ffa600,  #ab46d1,   #2282bf,      #9e794a,     #9d3959,   #70c6b4;
+
+// the iterator start at array size, then will be decremented
+@iterator : length(@boards);
+.loop-example(@boards; @iterator) when (@iterator > 0) {
+    // call the same loop as many times as required to reach 0
+    .loop-example(@boards; (@iterator - 1));
+
+    // use the variables passed in parameters
+    @board : extract(@boards, @iterator);
+    // or retrieve some variables defined before
+    @board-color : extract(@boards-colors, @iterator);
+
+    // start to write css with theses variables
+    .board-@{board} {
+        .someclass{
+            background-color: @board-color;
+        }
+    }
+}
+// call the loop
+.loop-example(@boards; @iterator);
+
+*/
+// }}} End loop sample
+
+// used only for the sample page
+h1 a.sample-section{
+    color:#333!important;
+}
+
+
+/*ATECNA*/
+@import url(https://fonts.googleapis.com/css?family=Teko);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?6op66w');
+    src:    url('fonts/icomoon.eot?6op66w#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6op66w') format('truetype'),
+    url('fonts/icomoon.woff?6op66w') format('woff'),
+    url('fonts/icomoon.svg?6op66w#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-elem-liste:before {content: "\e92e";}
+.icon-fin:before {content: "\e92c";}
+.icon-debut:before {
+    content: "\e92c" !important;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+}
+.icon-suivant:before {content: "\e92d";}
+.icon-precedent:before {
+    content: "\e92d" !important;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+}
+.icon-account:before {content: "\e900";}
+.icon-actif:before {content: "\e901";}
+.icon-actualiser:before {content: "\e902";}
+.icon-add-account:before {content: "\e903";}
+.icon-aide:before {content: "\e904";}
+.icon-balise:before {content: "\e905";}
+.icon-calendar:before {content: "\e906";}
+.icon-cata:before {content: "\e907";}
+.icon-close:before {content: "\e908";}
+.icon-connect:before {content: "\e909";}
+.icon-connect-as:before {content: "\e90a";}
+.icon-connection:before {content: "\e90b";}
+.icon-download:before {content: "\e90c";}
+.icon-dupliquer:before {content: "\e90d";}
+.icon-editer:before {content: "\e90e";}
+.icon-erase:before {content: "\e90f";}
+.icon-erreur:before {content: "\e910";}
+.icon-euro:before {content: "\e911";}
+.icon-filtre:before {content: "\e912";}
+.icon-fleche:before {content: "\e913";}
+.icon-forbidden:before {content: "\e914";}
+.icon-home:before {content: "\e915";}
+.icon-home-stats:before {content: "\e916";}
+.icon-info:before {content: "\e917";}
+.icon-last-video:before {content: "\e918";}
+.icon-liste:before {content: "\e919";}
+.icon-menu:before {content: "\e91a";}
+.icon-moins:before {content: "\e91b";}
+.icon-no-actualiser:before {content: "\e91c";}
+.icon-option:before {content: "\e91d";}
+.icon-panier:before {content: "\e91e";}
+.icon-pause:before {content: "\e91f";}
+.icon-pause2:before {content: "\e920";}
+.icon-play:before {content: "\e921";}
+.icon-plus:before {content: "\e922";}
+.icon-rss:before {content: "\e923";}
+.icon-search:before {content: "\e924";}
+.icon-stats:before {content: "\e925";}
+.icon-top-video:before {content: "\e926";}
+.icon-upload:before {content: "\e927";}
+.icon-valider:before {content: "\e928";}
+.icon-video:before {content: "\e929";}
+.icon-voir:before {content: "\e92a";}
+.icon-volume:before {content: "\e92b";}
+
+/** Mixins icon */
+.make-icon() {
+    &:before {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+.make-icon-search() {
+    .make-icon();
+    &:before {
+        content: "\e924";
+    }
+}
+.make-icon-close() {
+    .make-icon();
+    &:before {
+        content: "\e908";
+    }
+}
+
+
+@btn-bg          : #e4e4e4;
+@btn-color-hover : #fff;
+
+@admin-color    : #ffa600;
+@agency-color   : #ab46d1;
+@publisher-color: #2282bf;
+@producer-color : #9e794a;
+@brand-color    : #9d3959;
+@client-color   : #70c6b4;
+
+@boards        : ~"admin", ~"agency", ~"publisher", ~"producer", ~"brand",  ~"client";
+@boards-colors : @admin-color, @agency-color, @publisher-color, @producer-color, @brand-color, @client-color;
+@iterator      : length(@boards);
+
+.btn{
+    display:inline-block;
+    height: 33px;
+    transition:0.5s;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase; 
+    font-size:20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor:pointer;
+    border-radius: 4px;
+    padding:5px;
+    line-height: 24px;
+    margin:5px
+}
+.btn .icon{font-size:22px;}
+
+.btn-lg{
+    display:inline-block;
+    height: 55px;
+    transition:0.5s;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase; 
+    font-size:38px;
+    text-align: center;
+    vertical-align: middle;
+    cursor:pointer;
+    border-radius: 6px;
+    padding:5px 15px;
+    line-height: 48px;
+    margin:5px
+}
+.btn-lg .icon{font-size:27px;}
+
+// .btn-admin
+// .btn-agency
+// .btn-publisher
+// .btn-producer
+// .btn-client
+.loop-buttons(@boards;@iterator) when (@iterator > 0) {
+    .loop-buttons(@boards; (@iterator - 1));
+
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+
+    .btn-@{board}, .board-@{board} .btn-default {
+        color: @board-color;
+        background-color: @btn-color-hover!important;
+
+        &:hover  { color: @btn-color-hover!important; background-color: @board-color!important;}
+        &:focus  { color: @btn-color-hover!important; background-color: @board-color!important;}
+        &:active { color: @btn-color-hover!important; background-color: @board-color!important;}
+    }
+    .board-@{board} {
+        .form-control:focus{
+            border: solid 2px @board-color;
+        }
+    }
+}
+.loop-buttons(@boards; @iterator);
+
+
+
+
+
+
+// GENERAL 
+
+.page-header h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    text-align: left;
+
+    &:after {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: bottom;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 10px;
+    }
+}
+
+
+
+.page-link span{
+    font-family: 'Teko', sans-serif!important;
+    text-transform:uppercase!important;
+}
+
+
+
+.btn-red{
+    color: #e84646;
+    background-color: @btn-bg;
+
+    &:hover { color: @btn-color-hover;background-color: #e84646;}
+    &:focus { color: @btn-color-hover;background-color: #e84646;}
+    &:active { color: @btn-color-hover;background-color: #e84646;}
+}
+
+.btn-green{
+    color: #6ed163;
+    background-color: @btn-bg;
+
+    &:hover { color: @btn-color-hover;background-color: #6ed163;}
+    &:focus { color: @btn-color-hover;background-color: #6ed163;}
+    &:active { color: @btn-color-hover;background-color: #6ed163;}
+}
+.page-title h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    text-align: left;
+
+    &:after {
+        content:'';
+        display:inline-block;
+        vertical-align:middle;
+        width:90%;
+        height:100%;
+        margin-right:-100%;
+    }
+}
+
+.loop-h1(@boards;@iterator) when (@iterator > 0) {
+    .loop-h1(@boards; (@iterator - 1));
+
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+    .board-@{board} {
+        .page-title h1:after {
+            border-bottom : 2px solid @board-color;
+        }
+        .page-header h1:after{
+            border-top : 2px solid @board-color;
+        }
+    }
+}
+.loop-h1(@boards; @iterator);
+
+.form-control {
+    display: block;
+    border: solid 2px #c2c2c2;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color:#818181;
+    height:55px;
+    padding:10px;
+
+    &:focus {
+        outline: 0;
+        box-shadow:none;
+    }
+}
+
+.loop-form-control(@boards;@iterator) when (@iterator > 0) {
+    .loop-form-control(@boards; (@iterator - 1));
+
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+
+    .board-@{board} {
+        .form-control:focus{
+            border: solid 2px @board-color;
+        }
+    }
+}
+.loop-form-control(@boards; @iterator);
+
+
+
+
+
+
+
+
+
+.page-header h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    text-align: left;
+
+    &:after {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: bottom;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 10px;
+    }
+}
+
+
+
+.page-link span{
+    font-family: 'Teko', sans-serif!important;
+    text-transform:uppercase!important;
+}
+
+
+
+
+// initial variables: one (or more) arrays of the same size
+// the iterator start at array size, then will be decremented
+.loop-pagination(@boards;@iterator) when (@iterator > 0) {
+    // call the same loop as many times as required to reach 0
+    .loop-pagination(@boards; (@iterator - 1));
+    // use the variables passed in parameters
+    @board : extract(@boards, @iterator);
+    // or retrieve some variables defined before
+    @board-color : extract(@boards-colors, @iterator);
+    // start to write css with theses variables
+    .board-@{board} {
+        .page-link span{
+            color : @board-color!important;
+        }
+        .pagination .active a.page-link{
+            background : @board-color!important;
+            border     : 2px solid @board-color!important;
+        }
+    }
+}
+// call the loop !
+.loop-pagination(@boards; @iterator);
+
+
+
+
+
+.input-group-addon .icon-search{
+    font-size:34px;
+    color:#fff;
+}
+
+.input-group .form-control{
+    border-right:none;
+}
+
+.input-group-addon {
+    padding:0px;
+    border:none!important;
+    button{
+        background:none!important;
+        border:none!important;
+        width:55px!important;
+    }
+}
+
+
+
+// input-group-addons and links
+.loop-forms(@boards;@iterator) when (@iterator > 0) {
+    .loop-forms(@boards; (@iterator - 1));
+
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+    .board-@{board} {
+        .input-group-addon{ background: @board-color!important;}
+
+        a{ color : @board-color!important; }
+        .icon { color: @board-color; }
+    }
+}
+.loop-forms(@boards; @iterator);
+
+
+.pagination > li > a, .pagination > li > span {
+    border:2px solid #c2c2c2!important;
+}
+
+
+.pagination{
+    a{
+        font-size:28px;
+        font-family:'Open Sans', sans-serif;
+        max-height:56px!important;
+        padding: 6px 17px!important;
+        color:#a3a3a3!important;
+    }
+    .active a{
+        color:#fff!important;
+    }
+}
+.pagination {
+    .btn .icon {
+        font-size:35px!important;
+        display: inline-block;
+    }
+}
+
+
+.form-inline .btn-default{
+    font-size: 28px;
+    height: 56px !important;
+    padding: 6px 17px !important;
+    .icon{
+    font-size:50px;
+    line-height: 0.85!important;
+    }
+}
+
+.form-inline .btn-invert{
+    font-size: 28px;
+    height: 56px !important;
+    padding: 6px 17px !important;
+    .icon{
+    font-size:50px;
+    line-height: 0.85!important;
+    }
+}
+
+
+
+.daterangepicker {
+
+    th.month{
+        font-size:40px!important;
+        padding:0!important;
+        font-family: 'Teko', sans-serif!important;
+        text-transform:lowercase!important;
+        border-bottom:1px solid #d7d7d7!important;
+    }
+    .available {
+        font-size:20px!important;
+        font-weight:normal!important;
+        padding:7px 12px!important;
+        color:#808080;
+    }
+    .active{background-color: @admin-color!important; color:#fff!important;
+    }
+    .off{
+        color:#c2c2c2!important;
+    }
+    .calendar {
+        display: none;
+        margin: 4px;
+        max-width: 390px!important;
+
+        th{
+            font-family:'Open Sans', sans-serif;
+            font-size:26px;
+            font-weight:bold;
+            text-transform:uppercase;
+            border-radius:0px!important;
+        }
+        td{
+            border-radius:0px!important;
+        }
+    }
+
+    td.start-date.end-date {
+    border-radius: 0px!important;}
+
+}
+
+@length : length(@boards);
+.loop-daterangepicker(@boards;@length) when (@length > 0) {
+    .loop-daterangepicker(@boards; (@length - 1));
+    @board : extract(@boards, @length);
+    @board-color : extract(@boards-colors, @iterator);
+    .board-@{board} {
+        .daterangepicker {
+            .glyphicon{
+                color : @board-color;
+            }
+            .active{background-color:@board-color!important; color:#fff!important;
+                th{color:@board-color;}
+                td{
+                    &:hover{background-color:@board-color!important; color:#fff!important;}
+                    &:focus{background-color:@board-color!important; color:#fff!important;}
+                }
+            }
+        }
+    }
+}
+.loop-daterangepicker(@boards; @length);
+
+.daterangepicker {
+    font-family: 'Open Sans', sans-serif;
+    .glyphicon-chevron-left::before {
+        content: "\e92c" !important;  
+        font-size:35px!important;
+        display: inline-block;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .glyphicon-chevron-right::before {
+        content:  "\e92d"!important;
+        font-size:35px!important;
+    }
+}
+
+
+.daterangepicker::before, .daterangepicker::after {display:none!important;}
+.dropdown-menu {box-shadow:none!important; border:2px solid #c2c2c2!important; border-radius:8px!important;}
+.daterangepicker td, .daterangepicker tr { border-bottom:1px solid #d7d7d7!important}
+
+
+.daterangepicker .form-control{ display:none!important;}
+.ranges{
+        background-color:#c2c2c2!important;
+        min-height: 57vh;
+
+}
+.ranges li.active:after { 
+        border-left-color: @board-color;
+
+}
+.dropdown-menu{
+margin:0px!important;
+padding:0px!important;
+}
+
+.single .month{ font-size:40px!important;color:@board-color;}
+.opensright .month{ font-size:28px!important; color:@board-color;}
+.single thead th, .opensright thead th{ color:@board-color;}
+.single .available{ font-size:20px!important;color:#808080!important;}
+.opensright .available{ font-size:14px!important;background-color:@board-color;color: #fff!important;}
+.opensright .calendar th { font-size:18px;}
+.opensright .in-range { background-color:#fff!important;color: #808080!important;}
+.opensright .prev, .opensright .next { background-color:#fff!important;}
+.single .prev, .single .next { background-color:#fff!important;}
+
+
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+    width:120px!important;
+    height:35px!important;
+    padding: 0px 10px!important;
+}
+
+.tooltip {
+    font-size:20px!important;
+    letter-spacing:1px;
+    line-height:34px;
+}
+
+.loop-tooltips(@boards, @iterator) when (@iterator > 0) {
+    .loop-tooltips(@boards; (@iterator - 1));
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+
+    .board-@{board} .tooltip-inner{
+        background-color:@board-color!important;
+    }
+
+    .board-@{board} .tooltip{
+        &.top .tooltip-arrow {
+            border-top-color: @board-color!important;
+        }
+    }
+
+
+}
+.loop-tooltips(@boards, @iterator);
+
+
+/*ATECNA*/

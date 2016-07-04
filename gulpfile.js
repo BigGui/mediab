@@ -5,17 +5,16 @@ var	gulp = require('gulp'),
 
 
 // Répertoires
-var app = 'www/dev-mediabong_fichiers',
-	dist = 'www/dev-mediabong_fichiers';
+var app = 'app',
+	dist = 'www/assets';
 
-	
 
 // COMPILATION DE MINIFICATION DU LESS
 gulp.task('less', function() {	
-	gulp.src(app + '/mediabong.less')
+	gulp.src(app + '/less/mediabong.less')
 		.pipe(less())
 		// .pipe(rename('mediabong-test.css'))
-		.pipe(gulp.dest(dist));
+		.pipe(gulp.dest(dist + '/css'));
 });	
 
 
@@ -24,7 +23,7 @@ gulp.task('default', function() {
 	
 	gulp.start('less');
 
-	watch(app + '/*.less', function($event) {
+	watch(app + '/less/**/*.less', function($event) {
 		gulp.start('less');
 	});
 }); 
