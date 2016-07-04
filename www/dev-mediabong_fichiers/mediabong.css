@@ -9065,7 +9065,8 @@ table.dataTable tbody td.selected a {
   padding-left: 0;
   color: #a3a3a3;
 }
-input[type=checkbox].fake {
+input[type=checkbox].fake,
+input[type=radio].fake {
   display: none;
 }
 .Fake-checkbox {
@@ -9087,6 +9088,27 @@ input[type=checkbox].fake {
   background-position: -87px 0;
 }
 .form-group .Fake-checkbox {
+  margin-right: 20px;
+}
+.Fake-radio {
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  vertical-align: middle;
+  background-image: url("images/sprite-check.png");
+  background-repeat: no-repeat;
+  background-position: 0 -58px;
+}
+.Fake-radio:hover {
+  background-position: -58px -58px;
+}
+.Fake-radio--active {
+  background-position: -29px -58px;
+}
+.Fake-radio--active:hover {
+  background-position: -87px -58px;
+}
+.form-group .Fake-radio {
   margin-right: 20px;
 }
 .container-full {

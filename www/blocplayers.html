@@ -131,6 +131,7 @@
     </div>
 
   <script src="../chosen/chosen.jquery.js" type="text/javascript"></script>
+  <script src="dev-mediabong_fichiers/check-radio-fake.js" type="text/javascript"></script>
   <script type="text/javascript">
     /**
       * Init comboboxes
@@ -142,32 +143,6 @@
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
-
-    /**
-      * Init checkboxes
-      */
-
-    $("input[type=checkbox]").each(function(i, elem) {
-        var fake = $('<a></a>', {
-            href: "#",
-            class: 'Fake-checkbox'
-        });
-        $(elem)
-            .after(
-                fake.on('click touchstart', function(){
-                    $(elem).prop('checked', !$(elem).prop('checked'));
-                    $(this).toggleClass('Fake-checkbox--active');
-                })
-            )
-            .on('change', function(evt) {
-                if ($(elem).prop('checked')) {
-                    fake.addClass('Fake-checkbox--active');
-                }
-                else {
-                    fake.removeClass('Fake-checkbox--active');
-                }
-            })
-            .addClass('fake');
-    });
+    
   </script>
 </body></html>
