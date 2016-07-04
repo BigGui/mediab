@@ -25,26 +25,3 @@
             })
             .addClass('fake');
     });
-/*
-    $("input[type=radio]").each(function(i, elem) {
-        var fake = $('<a>', {
-            href: "javascript:void(0)",
-            class: 'Fake-radio'
-        });
-        $(elem)
-            .after(
-                fake.on('click touchstart', function(){
-                    $(elem).prop('selected', !$(elem).prop('selected'));
-                    $(this).toggleClass('Fake-radio--active');
-                })
-            )
-            .on('change', function(evt) {
-                if ($(elem).prop('selected')) {
-                    fake.addClass('Fake-radio--active');
-                }
-                else {
-                    fake.removeClass('Fake-radio--active');
-                }
-            })
-            .addClass('fake');
-    });*/

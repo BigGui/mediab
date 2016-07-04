@@ -52,6 +52,44 @@ $(function() {
 });
 </script>
 
+<script type="text/javascript">
+$(function() {
+    
+    $('input[name="calendar-2"]').daterangepicker({
+    timePickerIncrement: 1,
+    autoApply: true,
+    ranges: {
+        "Last 7 Days": [
+            "2016-06-26T15:52:04.021Z",
+            "2016-07-02T15:52:04.021Z"
+        ],
+        "Last 30 Days": [
+            "2016-06-03T15:52:04.021Z",
+            "2016-07-02T15:52:04.021Z"
+        ],
+        "This Month": [
+            "2016-06-30T22:00:00.000Z",
+            "2016-07-31T21:59:59.999Z"
+        ],
+        "Last Month": [
+            "2016-05-31T22:00:00.000Z",
+            "2016-06-30T21:59:59.999Z"
+        ]
+    },
+    startDate: "07/01/2015",
+    endDate: "07/15/2015",
+    opens: "right",
+    drops: "down",
+    buttonClasses: "btn btn-sm",
+    applyClass: "btn-success",
+    cancelClass: "btn-default"
+}, function(start, end, label) {
+  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+});
+
+});
+</script>
+
 <link rel="stylesheet" type="text/css" href="dev-mediabong_fichiers/jquery.css" media="screen">
 <link type="text/css" href="dev-mediabong_fichiers/mediabong.css" rel="stylesheet" media="screen">
 <link type="text/css" href="dev-mediabong_fichiers/admin.css" rel="stylesheet" media="screen"><style type="text/css">.fancybox-margin{margin-right:16px;}</style><link href="dev-mediabong_fichiers/socialwidgets.css" type="text/css" rel="stylesheet"><style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
@@ -351,6 +389,137 @@ style.firebugResetStyles {
 
 
 
+   <div class="page-header">
+<h1><a class="sample-section" href="#sample-icons-ref-admin" data-toggle="collapse">Icons</a></h1>
+      </div>
+
+      <div class="collapse in" id="sample-icons-ref-admin">
+<div class="lead">
+<span class="icon icon-elem-liste   "></span>
+<span class="icon icon-debut          "></span>
+<span class="icon icon-fin          "></span>
+<span class="icon icon-precedent       "></span>
+<span class="icon icon-suivant      "></span>
+<span class="icon icon-account      "></span>
+<span class="icon icon-actif        "></span>
+<span class="icon icon-actualiser   "></span>
+<span class="icon icon-add-account  "></span>
+<span class="icon icon-aide         "></span>
+<span class="icon icon-balise       "></span>
+<span class="icon icon-calendar     "></span>
+<span class="icon icon-cata         "></span>
+<span class="icon icon-close        "></span>
+<span class="icon icon-connect      "></span>
+<span class="icon icon-connect-as   "></span>
+<span class="icon icon-connection   "></span>
+<span class="icon icon-download     "></span>
+<span class="icon icon-dupliquer    "></span>
+<span class="icon icon-editer       "></span>
+<span class="icon icon-erase        "></span>
+<span class="icon icon-erreur       "></span>
+<span class="icon icon-euro         "></span>
+<span class="icon icon-filtre       "></span>
+<span class="icon icon-fleche       "></span>
+<span class="icon icon-forbidden    "></span>
+<span class="icon icon-home         "></span>
+<span class="icon icon-home-stats   "></span>
+<span class="icon icon-info         "></span>
+<span class="icon icon-last-video   "></span>
+<span class="icon icon-liste        "></span>
+<span class="icon icon-menu         "></span>
+<span class="icon icon-moins        "></span>
+<span class="icon icon-no-actualiser"></span>
+<span class="icon icon-option       "></span>
+<span class="icon icon-panier       "></span>
+<span class="icon icon-pause        "></span>
+<span class="icon icon-pause2       "></span>
+<span class="icon icon-play         "></span>
+<span class="icon icon-plus         "></span>
+<span class="icon icon-rss          "></span>
+<span class="icon icon-search       "></span>
+<span class="icon icon-stats        "></span>
+<span class="icon icon-top-video    "></span>
+<span class="icon icon-upload       "></span>
+<span class="icon icon-valider      "></span>
+<span class="icon icon-video        "></span>
+<span class="icon icon-voir         "></span>
+<span class="icon icon-volume       "></span>
+</div>
+</div>
+
+
+
+ <div class="page-header">
+<h1><a class="sample-section" href="#sample-pagination-ref-admin" data-toggle="collapse">Pagination</a></h1>
+ </div>
+
+      <div class="collapse in" id="sample-pagination-ref-admin">
+
+<nav>
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span class="true">Précédent</span>
+      </a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item"><a class="page-link" href="#">6</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span class="true">Suivant</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<form class="form-pagination form-inline" method="post" action="/admin/video/published">
+    <div class="input-group">
+
+        <span class="input-group-btn">
+            <a class="btn btn-default" title="Première page" href="http://loc.mediabong.com/admin/video/published?page=1">
+                <span class="icon icon-debut"></span>
+            </a>
+        </span>
+        <span class="input-group-btn">
+        <a class="btn btn-default" title="Page Précédente" href="http://loc.mediabong.com/admin/video/published?page=1">
+                <span class="icon icon-precedent"></span>
+            </a>
+        </span>
+
+            <input size="3" class="form-control" name="page_post" id="page_post" value="1" type="text">
+            <span id="pager_page" class="input-group-addon"> / 46151</span>
+        
+        <span class="input-group-btn">
+
+        <a class="btn btn-default" title="Page Suivante" href="http://loc.mediabong.com/admin/video/published?page=2">
+                <span class="icon icon-suivant"></span>
+            </a>
+            <a class="btn btn-default" title="Dernière Page" href="http://loc.mediabong.com/admin/video/published?page=46151">
+                <span class="icon icon-fin"></span>
+            </a>
+        </span>
+
+        <select class="form-control pagesize" name="rp">
+            <option value="10" selected="selected">10 résultats</option>
+            <option value="20">20 résultats</option>
+            <option value="30">30 résultats</option>
+            <option value="40">40 résultats</option>
+        </select>
+    </div>
+</form>
+
+
+
+</div>
+
+
+
  <div class="page-header">
         <h1 class="search">Bloque recherche</h1>
       </div>
@@ -368,249 +537,12 @@ style.firebugResetStyles {
                         </button>  
                     </span>
                 </div>
-                <br>
-                <div class="input-group stylish-input-group board-agency">
-                    <input type="text" class="form-control"  placeholder="Rechercher" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="icon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-
-                <br>
-                <div class="input-group stylish-input-group board-publisher">
-                    <input type="text" class="form-control"  placeholder="Rechercher" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="icon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-                <br>
-                <div class="input-group stylish-input-group board-producer">
-                    <input type="text" class="form-control"  placeholder="Rechercher" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="icon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-                <br>
-                <div class="input-group stylish-input-group board-brand">
-                    <input type="text" class="form-control"  placeholder="Rechercher" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="icon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-                <br>
-                <div class="input-group stylish-input-group board-client">
-                    <input type="text" class="form-control"  placeholder="Rechercher" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="icon-search"></span>
-                        </button>  
-                    </span>
-                </div>
 
             </div>
         </div>
 
     </div>
 </div>
-
-
-
- <div class="page-header">
-        <h1>Pagination</h1>
-      </div>
-
-<div class="board-admin">
-<form class="form-pagination form-inline" method="post" action="/admin/video/published">
-    <div class="input-group">
-
-        <span class="input-group-btn">
-            <a class="btn btn-default" title="Première page" href="/admin/video/published?page=1">
-                <span class="glyphicon glyphicon-fast-backward"></span>
-            </a>
-        </span>
-        <span class="input-group-btn">
-        <a class="btn btn-default" title="Page Précédente" href="/admin/video/published?page=1">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-        </span>
-
-            <input size="3" class="form-control" name="page_post" id="page_post" value="1" type="text">
-            <span id="pager_page" class="input-group-addon"> / 46151</span>
-        
-        <span class="input-group-btn">
-
-        <a class="btn btn-default" title="Page Suivante" href="/admin/video/published?page=2">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-            <a class="btn btn-default" title="Dernière Page" href="/admin/video/published?page=46151">
-                <span class="glyphicon glyphicon-fast-forward"></span>
-            </a>
-        </span>
-
-        <select class="form-control pagesize" name="rp">
-            <option value="10" selected="selected">10 résultats</option>
-            <option value="20">20 résultats</option>
-            <option value="30">30 résultats</option>
-            <option value="40">40 résultats</option>
-        </select>
-    </div>
-</form>
-</div>
-
-
-
-
-
-
-
-
-
-
-<nav>
-  <ul class="pagination board-admin">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav>
-  <ul class="pagination board-agency">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav>
-  <ul class="pagination board-publisher">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav>
-  <ul class="pagination board-producer">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav>
-  <ul class="pagination board-brand">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav>
-  <ul class="pagination board-clients">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span class="true">Précédent</span>
-      </a>
-    </li>
-    <li class="page-item active">
-      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span class="true">Suivant</span>
-      </a>
-    </li>
-  </ul>
-</nav>
 
 
 
@@ -637,13 +569,20 @@ style.firebugResetStyles {
   <a href="#" data-toggle="tooltip" title="Info Bulle">CLIENT</a>
 </div>
 
+
+
+
 <div class="page-header">
         <h1>Calendriers</h1>
 
 <div class="row">
 <input type="text" name="calendar-1" />
 </div>
-</div>
+<br>
+<div class="row">
+<input type="text" name="calendar-2" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" />
+
+
 
 
 
