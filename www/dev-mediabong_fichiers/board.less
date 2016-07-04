@@ -223,11 +223,11 @@ h1 a.sample-section{
 
     .btn-@{board}, .board-@{board} .btn-default {
         color: @board-color;
-        background-color: @btn-bg;
+        background-color: @btn-color-hover!important;
 
-        &:hover {  color: @btn-color-hover;background-color: @board-color;}
-        &:focus {  color: @btn-color-hover;background-color: @board-color;}
-        &:active { color: @btn-color-hover;background-color: @board-color;}
+        &:hover  { color: @btn-color-hover!important; background-color: @board-color!important;}
+        &:focus  { color: @btn-color-hover!important; background-color: @board-color!important;}
+        &:active { color: @btn-color-hover!important; background-color: @board-color!important;}
     }
     .board-@{board} {
         .form-control:focus{
@@ -236,6 +236,37 @@ h1 a.sample-section{
     }
 }
 .loop-buttons(@boards; @iterator);
+
+
+
+
+
+
+// GENERAL 
+
+.page-header h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    text-align: left;
+
+    &:after {
+        content:"";
+        display: inline-block;
+        height: 0.5em;
+        vertical-align: bottom;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 10px;
+    }
+}
+
+
+
+.page-link span{
+    font-family: 'Teko', sans-serif!important;
+    text-transform:uppercase!important;
+}
+
 
 
 .btn-red{
@@ -438,6 +469,28 @@ h1 a.sample-section{
 }
 
 
+.form-inline .btn-default{
+    font-size: 28px;
+    height: 56px !important;
+    padding: 6px 17px !important;
+    .icon{
+    font-size:50px;
+    line-height: 0.85!important;
+    }
+}
+
+.form-inline .btn-invert{
+    font-size: 28px;
+    height: 56px !important;
+    padding: 6px 17px !important;
+    .icon{
+    font-size:50px;
+    line-height: 0.85!important;
+    }
+}
+
+
+
 .daterangepicker {
 
     th.month{
@@ -503,8 +556,9 @@ h1 a.sample-section{
 .loop-daterangepicker(@boards; @length);
 
 .daterangepicker {
+    font-family: 'Open Sans', sans-serif;
     .glyphicon-chevron-left::before {
-        content: "" !important;
+        content: "\e92c" !important;  
         font-size:35px!important;
         display: inline-block;
         -webkit-transform: rotate(180deg);
@@ -520,9 +574,36 @@ h1 a.sample-section{
     }
 }
 
+
 .daterangepicker::before, .daterangepicker::after {display:none!important;}
 .dropdown-menu {box-shadow:none!important; border:2px solid #c2c2c2!important; border-radius:8px!important;}
 .daterangepicker td, .daterangepicker tr { border-bottom:1px solid #d7d7d7!important}
+
+
+.daterangepicker .form-control{ display:none!important;}
+.ranges{
+        background-color:#c2c2c2!important;
+        min-height: 57vh;
+
+}
+.ranges li.active:after { 
+        border-left-color: @board-color;
+
+}
+.dropdown-menu{
+margin:0px!important;
+padding:0px!important;
+}
+
+.single .month{ font-size:40px!important;color:@board-color;}
+.opensright .month{ font-size:28px!important; color:@board-color;}
+.single thead th, .opensright thead th{ color:@board-color;}
+.single .available{ font-size:20px!important;color:#808080!important;}
+.opensright .available{ font-size:14px!important;background-color:@board-color;color: #fff!important;}
+.opensright .calendar th { font-size:18px;}
+.opensright .in-range { background-color:#fff!important;color: #808080!important;}
+.opensright .prev, .opensright .next { background-color:#fff!important;}
+.single .prev, .single .next { background-color:#fff!important;}
 
 
 
