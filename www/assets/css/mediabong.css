@@ -2265,11 +2265,11 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #c2c2c2;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #c2c2c2;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2280,7 +2280,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #c2c2c2;
 }
 .table .table {
   background-color: #fff;
@@ -2291,10 +2291,10 @@ th {
 .table-condensed > thead > tr > td,
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > td {
-  padding: 5px;
+  padding: 9px;
 }
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #c2c2c2;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2302,14 +2302,14 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #c2c2c2;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
   border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
+  background-color: #f6f6f6;
 }
 .table-hover > tbody > tr:hover {
   background-color: #f5f5f5;
@@ -2440,7 +2440,7 @@ table th[class*="col-"] {
     margin-bottom: 15px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    border: 1px solid #c2c2c2;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -5573,7 +5573,7 @@ button.list-group-item-danger.active:focus {
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #c2c2c2;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
@@ -9075,6 +9075,48 @@ table.dataTable tbody td.selected a {
   direction: rtl;
 }
 /* @end */
+.table-wrapper {
+  border: 2px solid #c2c2c2;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.table-wrapper .table {
+  margin-bottom: 0;
+}
+.table {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #4c4c4c;
+  border: 0;
+}
+.table tr,
+.table td,
+.table th {
+  line-height: 1.25 !important;
+  padding-right: 14px !important;
+  border-width: 0 2px !important;
+  border-color: #e7e7e7;
+  border-style: solid;
+  text-align: right;
+}
+.table tr:first-child,
+.table td:first-child,
+.table th:first-child {
+  border-left: 0;
+}
+.table tr:last-child,
+.table td:last-child,
+.table th:last-child {
+  border-right: 0;
+}
+.table tbody > tr > td:first-child {
+  text-align: left;
+  white-space: nowrap;
+}
+.table tbody .total {
+  font-weight: bold;
+}
 .Accordion {
   background-color: #f6f6f6;
   border-radius: 6px;
