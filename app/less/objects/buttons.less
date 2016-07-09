@@ -1,0 +1,134 @@
+//
+// BUTTONS
+//
+
+@btn-bg          : #e4e4e4;
+@btn-color-hover : #fff;
+@btn-green-color : #6ed163;
+@btn-red-color	 : #e84646;
+
+
+.btn{
+    display:inline-block;
+    height: 33px;
+    transition:0.5s;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase; 
+    font-size:20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor:pointer;
+    border-radius: 4px;
+    padding:5px;
+    line-height: 24px;
+    margin:5px
+}
+.btn .icon{font-size:22px;}
+
+.btn-lg{
+    display:inline-block;
+    height: 55px;
+    transition:0.5s;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase; 
+    font-size:38px;
+    text-align: center;
+    vertical-align: middle;
+    cursor:pointer;
+    border-radius: 6px;	
+    padding:5px 15px;
+    line-height: 48px;
+    margin:5px
+}
+.btn-lg .icon{font-size:27px;}
+
+// .btn-admin
+// .btn-agency
+// .btn-publisher
+// .btn-producer
+// .btn-client
+.loop-buttons(@boards;@iterator) when (@iterator > 0) {
+    .loop-buttons(@boards; (@iterator - 1));
+
+    @board : extract(@boards, @iterator);
+    @board-color : extract(@boards-colors, @iterator);
+
+    .btn-@{board},
+    .board-@{board} .btn-default {
+        color: @board-color;
+        background-color: @btn-color-hover;
+
+        &:hover,
+        &:focus,
+        &:active {
+        	color: @btn-color-hover;
+        	background-color: @board-color;
+        }
+    }
+    .board-@{board} .btn-reverse {
+        color: @btn-color-hover !important;
+        background-color: @board-color;
+
+        &:hover,
+        &:focus,
+        &:active {
+        	color: @board-color !important;
+        	background-color: @btn-color-hover;
+        }
+    }
+    .board-@{board} {
+        .form-control:focus{
+            border: solid 2px @board-color;
+        }
+    }
+}
+.loop-buttons(@boards; @iterator);
+
+
+.btn-red{
+    color: @btn-red-color;
+    background-color: @btn-bg;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	color: @btn-color-hover !important;
+    	background-color: @btn-red-color;
+    }
+
+	&.btn-reverse {
+		color: @btn-bg;
+		background-color: @btn-red-color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: @btn-red-color !important;
+			background-color: @btn-color-hover;
+		}
+	}
+}
+
+.btn-green{
+    color: @btn-green-color;
+    background-color: @btn-bg;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	color: @btn-color-hover !important;
+    	background-color: @btn-green-color;
+    }
+    
+	&.btn-reverse {
+		color: @btn-bg;
+		background-color: @btn-green-color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: @btn-green-color !important;
+			background-color: @btn-color-hover;
+		}
+	}
+}

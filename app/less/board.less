@@ -39,11 +39,6 @@ h1 a.sample-section{
 @import url(https://fonts.googleapis.com/css?family=Teko);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-@import "objects/fonts";
-@import "objects/datepicker";
-
-@btn-bg          : #e4e4e4;
-@btn-color-hover : #fff;
 
 @admin-color    : #ffa600;
 @agency-color   : #ab46d1;
@@ -56,70 +51,10 @@ h1 a.sample-section{
 @boards-colors : @admin-color, @agency-color, @publisher-color, @producer-color, @brand-color, @client-color;
 @iterator      : length(@boards);
 
-.btn{
-    display:inline-block;
-    height: 33px;
-    transition:0.5s;
-    font-family: 'Teko', sans-serif;
-    text-transform: uppercase; 
-    font-size:20px;
-    text-align: center;
-    vertical-align: middle;
-    cursor:pointer;
-    border-radius: 4px;
-    padding:5px;
-    line-height: 24px;
-    margin:5px
-}
-.btn .icon{font-size:22px;}
 
-.btn-lg{
-    display:inline-block;
-    height: 55px;
-    transition:0.5s;
-    font-family: 'Teko', sans-serif;
-    text-transform: uppercase; 
-    font-size:38px;
-    text-align: center;
-    vertical-align: middle;
-    cursor:pointer;
-    border-radius: 6px;
-    padding:5px 15px;
-    line-height: 48px;
-    margin:5px
-}
-.btn-lg .icon{font-size:27px;}
-
-// .btn-admin
-// .btn-agency
-// .btn-publisher
-// .btn-producer
-// .btn-client
-.loop-buttons(@boards;@iterator) when (@iterator > 0) {
-    .loop-buttons(@boards; (@iterator - 1));
-
-    @board : extract(@boards, @iterator);
-    @board-color : extract(@boards-colors, @iterator);
-
-    .btn-@{board}, .board-@{board} .btn-default {
-        color: @board-color;
-        background-color: @btn-color-hover!important;
-
-        &:hover  { color: @btn-color-hover!important; background-color: @board-color!important;}
-        &:focus  { color: @btn-color-hover!important; background-color: @board-color!important;}
-        &:active { color: @btn-color-hover!important; background-color: @board-color!important;}
-    }
-    .board-@{board} {
-        .form-control:focus{
-            border: solid 2px @board-color;
-        }
-    }
-}
-.loop-buttons(@boards; @iterator);
-
-
-
-
+@import "objects/fonts";
+@import "objects/datepicker";
+@import "objects/buttons";
 
 
 // GENERAL 
@@ -147,29 +82,11 @@ h1 a.sample-section{
     text-transform:uppercase!important;
 }
 
-
-
-.btn-red{
-    color: #e84646;
-    background-color: @btn-bg;
-
-    &:hover { color: @btn-color-hover;background-color: #e84646;}
-    &:focus { color: @btn-color-hover;background-color: #e84646;}
-    &:active { color: @btn-color-hover;background-color: #e84646;}
-}
-
-.btn-green{
-    color: #6ed163;
-    background-color: @btn-bg;
-
-    &:hover { color: @btn-color-hover;background-color: #6ed163;}
-    &:focus { color: @btn-color-hover;background-color: #6ed163;}
-    &:active { color: @btn-color-hover;background-color: #6ed163;}
-}
 .page-title h1{
     font-family: 'Teko', sans-serif;
     font-size: 56px;
     text-align: left;
+    overflow:hidden;    
 
     &:after {
         content:'';

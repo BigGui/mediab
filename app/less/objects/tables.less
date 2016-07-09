@@ -4,37 +4,13 @@
 
 @table-fs: 16px;
 @table-color: #4c4c4c;
+@table-border-width: 2px;
 @table-border-color: #c2c2c2;
 @table-border-radius: 6px;
 @table-inside-border-color: #e7e7e7;
+@table-title-bg-color: #5f5f5f;
 
-.table-wrapper {
-	border: 2px solid @table-border-color;
-	border-radius: @table-border-radius;
-	overflow-x: auto;
-	overflow-y: hidden;
-	width: 100%;	
-}
 
-.table-group {
-	.list-group {
-		.list-group-item {
-			&.active {
-				font-family: 'Teko', sans-serif;
-				background-color: #5f5f5f;
-				border-color: #5f5f5f;
-				color: #fff;
-			}
-			&:not(.active) {
-				padding: 0;
-			}
-
-			.badge {
-
-			}
-		}
-	}
-}
 
 .table {
 	font-family: "Open Sans", sans-serif;
@@ -43,10 +19,11 @@
 	border: 0;
 	margin-bottom: 0;
 
-	tr, td, th {
+	/* Default cells */
+	td, th {
 		line-height: 1.25 !important;
-		border-width: 0 2px !important;
-		border-color: @table-inside-border-color;
+		border-width: 0 @table-border-width !important;
+		border-color: @table-border-color;
 		border-style: solid;
 		&:first-child {
 			border-left: 0;	
@@ -54,10 +31,20 @@
 		&:last-child {
 			border-right: 0;	
 		}
+		&.actions {
+			font-size: 0;
+			white-space: nowrap;
+			text-align: right;
+			> .btn {
+				margin: 0 5px 0 2px;
+			}
+		}
 	}
 
+	/* Body cells */
 	tbody {
 		> tr > td {
+			vertical-align: middle !important;
 			&:first-child {
 				text-align: left;
 				white-space: nowrap;
@@ -68,12 +55,60 @@
 		}
 	}
 
-	/** STATS */
+	/* STATS */
 	&-stats {
-
-		tr, td, th {
+		td, th {
 			padding-right: @table-condensed-cell-padding + 5px !important;
 			text-align: right;
+			border-color: @table-inside-border-color;
+		}
+	}
+
+	/* Wrapper */
+	&-wrapper {
+		border: @table-border-width solid @table-border-color;
+		border-radius: @table-border-radius;
+		overflow-x: auto;
+		overflow-y: hidden;
+		width: 100%;	
+	}
+
+	/* Wrapper with title */
+	&-wrapper-title {
+		.list-group-item {
+			/* Title */
+			&.active {
+				padding: 8px 12px 2px;
+				border-color: @table-title-bg-color;
+				border-top-left-radius: @table-border-radius;
+				border-top-right-radius: @table-border-radius;
+				font-family: 'Teko', sans-serif;
+				font-size: 38px;
+				line-height: 1;
+				text-transform: uppercase;
+				background-color: @table-title-bg-color;
+				color: #fff;
+				> .badge {
+					width: 33px;
+					height: 33px;
+					padding: 7px 0;
+					border-radius: 0;
+					font-family: 'Open Sans', sans-serif;
+					font-size: 18px;
+					font-weight: bold;
+					background-color: @admin-color;
+					color: #fff;
+				}
+			}
+			/* Table wrapper */
+			&:not(.active) {
+				padding: 0;
+				border-bottom-left-radius: @table-border-radius;
+				border-bottom-right-radius: @table-border-radius;
+				border-color: @table-border-color;
+				border-width: 0 @table-border-width @table-border-width @table-border-width;
+				overflow: hidden;
+			}
 		}
 	}
 }
